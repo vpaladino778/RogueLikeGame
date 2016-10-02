@@ -1,19 +1,17 @@
 package com.Artanes.RougeLike.tiles;
 
-import java.awt.image.BufferedImage;
-
 import com.Artanes.RougeLike.gfx.AssetLoader;
+
+import java.awt.image.BufferedImage;
 
 public class WaterTile extends Tile{
 	
-	public WaterTile(int id)
-	{
+	public WaterTile(int id) {
 		super(getWater(), id);
 		
 	}
-	
-	public static BufferedImage getWater()
-	{
+	//Returns random water tile
+	public static BufferedImage getWater() {
 		double ran = Math.random();
 		if( ran <= .33)
 			return AssetLoader.water1;

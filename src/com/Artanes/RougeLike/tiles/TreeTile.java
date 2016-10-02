@@ -1,17 +1,16 @@
 package com.Artanes.RougeLike.tiles;
 
-import java.awt.image.BufferedImage;
-
 import com.Artanes.RougeLike.gfx.AssetLoader;
+
+import java.awt.image.BufferedImage;
 
 public class TreeTile extends Tile{
 	String TreeType;
-	public TreeTile(int id, String treeType)
-	{
+	public TreeTile(int id, String treeType) {
 		super(getTree(treeType),id);
 	}
-	public static BufferedImage getTree(String treeType)
-	{
+	//Different types of trees
+	public static BufferedImage getTree(String treeType) {
 		if(treeType.toLowerCase().equals("tree"))
 			return AssetLoader.tree;
 		if(treeType.toLowerCase().equals("appletree"))

@@ -1,11 +1,12 @@
 package com.Artanes.RougeLike.states;
 
-import java.awt.Graphics;
-
 import com.Artanes.RougeLike.Game;
+
+import java.awt.*;
 
 public class MenuState extends States{
 
+	//Not implemented
 	public MenuState(Game game)
 	{
 		super(game);
@@ -17,8 +18,7 @@ public class MenuState extends States{
 	}
 
 	@Override
-	public void render(Graphics g) 
-	{
+	public void render(Graphics g) {
 		
 	}
 		

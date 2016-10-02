@@ -9,16 +9,14 @@ public class GameCamera {
 
 	private float xOffSet,yOffSet;
 	private Game game;
-	public GameCamera(Game game, float xOff, float yOff)
-	{
+	public GameCamera(Game game, float xOff, float yOff) {
 		this.game = game;
 		xOffSet = xOff ;
 		yOffSet = yOff ;
 	}
 	
 	//Centers the gameCamera on the entity
-	public void centerOnEntity(Entity ent)
-	{
+	public void centerOnEntity(Entity ent) {
 		xOffSet = ent.getX() - game.getWidth() / 2 + ent.getWidth() / 2;
 		yOffSet = ent.getY() - game.getHeight() / 2 + ent.getHeight() / 2;
 

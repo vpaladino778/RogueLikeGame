@@ -1,12 +1,11 @@
 package com.Artanes.RougeLike.entities.creatures;
 
 
-import java.awt.Graphics;
-import java.awt.Rectangle;
-
 import com.Artanes.RougeLike.Game;
 import com.Artanes.RougeLike.gfx.AssetLoader;
 import com.Artanes.RougeLike.utils.Utils;
+
+import java.awt.*;
 
 public class Enemy extends Creature{
 
@@ -30,19 +29,14 @@ public class Enemy extends Creature{
 	}
 
 	
-	public void attack()
-	{
+	public void attack() {
 		counter++;
-			if(counter >= attackSpeed)
-			{
+			if(counter >= attackSpeed) {
 				bounds();
-					if(attackBoundry.intersects(player.bounds()))
-					{
-						damage = (playerLevel * damage);
-						player.health -= damage;
-						System.out.println(damage);
+					if(attackBoundry.intersects(player.bounds())) {
+						damage = playerLevel * damage;
+						player.health -= (int)Math.round((float)(playerLevel * damage) * Math.random());
 						Utils.playSound("res/sounds/hit.wav");
-
 					}
 					counter = 0;
 			}
@@ -50,21 +44,19 @@ public class Enemy extends Creature{
 	}
 
 	//Rectangle that determines if the player can be attacked
-	public Rectangle bounds()
-	{
-		attackBoundry = new Rectangle((int)((x + relativeX)  - game.getGameCamera().getxOffSet() - 15),(int)((y + relativeY)  - game.getGameCamera().getyOffSet() - 15),width + 15, height + 15);
+	public Rectangle bounds() {
+		attackBoundry = new Rectangle((int)((x + relativeX)  - game.getGameCamera().getxOffSet() - 15),
+				(int)((y + relativeY)  - game.getGameCamera().getyOffSet() - 15),width + 15, height + 15);
 		return attackBoundry;
 	}
 	//Move the enemy up and down 
-	public void patrolUp()
-	{
+	public void patrolUp() {
 		
 		if (goingDown == true){
 		    if (relativeY <= 0){
 		        goingDown = false;
 		        relativeY++;
-		    }
-		    else {
+		    } else {
 		    	relativeY--; 
 		    }
 		}
@@ -72,8 +64,7 @@ public class Enemy extends Creature{
 		    if (relativeY >= patrolHeight){
 		        goingDown = true;
 		        relativeY--;
-		    }
-		    else {
+		    } else {
 		    	relativeY++;
 		    }
 		}
@@ -88,11 +79,7 @@ public class Enemy extends Creature{
 		g.drawImage(AssetLoader.enemy,xPos,yPos,width, height, null);
 
 	}
-
 	public static int getPatrolHeight() {
 		return patrolHeight;
 	}
-	
-	
-
 }

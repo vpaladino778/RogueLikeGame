@@ -27,28 +27,24 @@ public class Tile {
 	protected final int id;
 	
 	private int xPos, yPos;
-	public Tile(BufferedImage tex, int id )
-	{
+	public Tile(BufferedImage tex, int id ) {
 		texture = tex;
 		this.id = id;
 		tiles[id] = this;
 	}
 	
-	public void tick()
-	{
+	public void tick() {
 		
 	}
 	
-	public void render(Graphics g, int x, int y)
-	{
+	public void render(Graphics g, int x, int y) {
 		//Draws the image on the screen
 		g.drawImage(texture, x, y, TILE_WIDTH, TILE_HEIGHT,null);
 		xPos = x;
 		yPos = y;
 	}
 	//Rectangle used for collisions
-	public Rectangle bounds()
-	{
+	public Rectangle bounds() {
 		Rectangle bounds = new Rectangle(xPos,yPos,TILE_WIDTH,TILE_HEIGHT);
 		return bounds;
 	}

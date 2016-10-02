@@ -1,12 +1,12 @@
 package com.Artanes.RougeLike.states;
 
-import java.awt.Graphics;
-
 import com.Artanes.RougeLike.Collisions;
 import com.Artanes.RougeLike.Game;
 import com.Artanes.RougeLike.entities.creatures.Player;
 import com.Artanes.RougeLike.gfx.GUI;
 import com.Artanes.RougeLike.worlds.World;
+
+import java.awt.*;
 
 public class GameState extends States {
 
@@ -15,8 +15,7 @@ public class GameState extends States {
 	private World world1Main;
 	private World world1Trees;
 	private World currentWorld;
-	public GameState(Game game)
-	{
+	public GameState(Game game) {
 		super(game);
 		player = new Player(game, 100,100);	
 		//currentWorld = playersdasdfsfsf33
@@ -27,8 +26,7 @@ public class GameState extends States {
 		world1Trees = new World(game,"res/worlds/world1Trees.txt",player,false);
 	}
 	@Override
-	public void tick() 
-	{
+	public void tick() {
 		world1Main.tick();
 		world1Trees.tick();
 		player.tick();
@@ -37,8 +35,7 @@ public class GameState extends States {
 	
 	//Renderes the gui, world and player. Also checks for collisions
 	@Override
-	public void render(Graphics g)
-	{
+	public void render(Graphics g) {
 	    world1Main.render(g);
 		world1Trees.render(g);
 		player.render(g);

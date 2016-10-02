@@ -1,9 +1,8 @@
 package com.Artanes.RougeLike.gfx;
 
-import java.awt.Font;
-import java.awt.Graphics;
-
 import com.Artanes.RougeLike.entities.creatures.Player;
+
+import java.awt.*;
 
 public class GUI {
 	private Player player;
@@ -24,7 +23,6 @@ public class GUI {
 	{
 		//Always render this info
 		g.drawString("Health: " + player.getHealth() + " / " + player.getMaxHealth(), 10, 20);
-		
 		g.drawString("Level: " + player.getLevel(),10,40);
 		
 		//Show this if key is held

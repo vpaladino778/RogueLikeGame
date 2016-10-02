@@ -20,8 +20,7 @@ public abstract class Creature extends Entity {
 	protected float speed;
 	protected float xMove, yMove;
 	
-	public Creature(Game game, float x, float y, int wid, int hei)
-	{
+	public Creature(Game game, float x, float y, int wid, int hei) {
 		super(game, x, y,wid,hei);
 		health = DEFAULT_HEALTH;
 		speed = DEFAULT_SPEED;
@@ -31,51 +30,40 @@ public abstract class Creature extends Entity {
 	}
 
 	//Add the move speed to the x and y position
-	public void move()
-	{
+	public void move() {
 		x += xMove;
 		y += yMove;
 	}
 	
 	
 	//Accessor and Mutator Methods
-	
 	public float getxMove() {
 		return xMove;
 	}
-
 	public void setxMove(float xMove) {
 		this.xMove = xMove;
 	}
-
 	public float getyMove() {
 		return yMove;
 	}
-
 	public void setyMove(float yMove) {
 		this.yMove = yMove;
 	}
-
 	public int getHealth() {
 		return health;
 	}
-
 	public void setHealth(int health) {
 		this.health = health;
 	}
-
 	public float getSpeed() {
 		return speed;
 	}
-
 	public int getDamage() {
 		return damage;
 	}
-
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
-
 	public void setSpeed(float speed) {
 		this.speed = speed;
 	}

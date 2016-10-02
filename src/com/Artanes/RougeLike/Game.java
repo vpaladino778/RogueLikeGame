@@ -1,14 +1,14 @@
 package com.Artanes.RougeLike;
 
-import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
-
 import com.Artanes.RougeLike.display.Display;
 import com.Artanes.RougeLike.gfx.AssetLoader;
 import com.Artanes.RougeLike.gfx.GameCamera;
 import com.Artanes.RougeLike.states.GameState;
 import com.Artanes.RougeLike.states.States;
 import com.Artanes.RougeLike.utils.Utils;
+
+import java.awt.*;
+import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable{
 	private Display display;
@@ -20,14 +20,11 @@ public class Game implements Runnable{
 	
 	public BufferStrategy bs;
 	public Graphics g;
-	
 	//User Input
 	private KeyManager keyManager;
 
-	
 	//State
 	private States gameState;
-	
 	
 	//Camera
 	private GameCamera gameCamera;
@@ -98,27 +95,23 @@ public class Game implements Runnable{
 		long timer = 0;
 		int ticks = 0;
 		//Game Loop
-		while(running)
-		{
+		while(running) {
 			now = System.nanoTime();
 			delta += (now - lastTime) / timePerTick;
 			timer += now- lastTime;
 			lastTime = now;
-			if(delta >= 1)
-			{
+			if(delta >= 1) {
 				tick();
 				render();
 				ticks++;
 				delta--;
 			}
 			//FPS counter
-			if(timer >= 1000000000)
-			{
+			if(timer >= 1000000000) {
 				System.out.println("FPS: " + ticks);
 				ticks=0;
 				timer = 0;
 			}
-			
 		}
 		stop();
 	}
@@ -142,18 +135,15 @@ public class Game implements Runnable{
 	{
 		return gameCamera;
 	}
-	public synchronized void start()
-	{
+	public synchronized void start() {
 		if(running)
 			return;
-		
 		running = true;
 		thread = new Thread(this);
 		thread.start();
 	}
 	
-	public synchronized void stop()
-	{
+	public synchronized void stop() {
 		if(running == false)
 			return;
 		
@@ -164,6 +154,4 @@ public class Game implements Runnable{
 			e.printStackTrace();
 		}
 	}
-
-
 }

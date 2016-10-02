@@ -1,7 +1,7 @@
 package com.Artanes.RougeLike.display;
 
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.JFrame;
 
 public class Display {
 	private JFrame frame;
@@ -37,6 +37,7 @@ public class Display {
 		frame.add(canvas);
 		frame.pack();
 	}
+
 	//Acessor methods
 	public Canvas getCanvas()
 	{
@@ -46,5 +47,6 @@ public class Display {
 	{
 		return frame;
 	}
-	
+
+
 }
