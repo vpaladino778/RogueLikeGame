@@ -1,8 +1,6 @@
 # RogueLikeGame
 Simple dungeon crawler RPG game
 
-Artwork courtesy of http://kenney.nl/assets
-
 ##Controls
 Use WASD to walk and spacebar to attack. Audio recommended
 
@@ -18,4 +16,4 @@ The tile legend:
 - 3 is water
 ```
 ###Acknowledgments
-*Artwork courtesy of http://kenney.nl/assets
+* Artwork courtesy of http://kenney.nl/assets
